@@ -1,3 +1,6 @@
 numpy
 sklearn
 matplotlib
+torch
+torchvision
+tqdm
