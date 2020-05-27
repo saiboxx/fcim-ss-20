@@ -200,10 +200,9 @@ def train_torch(data: Dataset) -> nn.Module:
             correct += (torch.argmax(prediction, dim=1) == target).float().sum()
             losses.append(loss)
 
-        with torch.no_grad():
-            accuracy = correct / len(data.targets)
-            print('Ep. {0}\t; {1:.3f} accuracy; {2:.3f} loss'
-                  .format(e, accuracy, torch.mean(torch.stack(losses))))
+        accuracy = correct / len(data.targets)
+        print('Ep. {0}\t; {1:.3f} accuracy; {2:.3f} loss'
+              .format(e, accuracy, torch.mean(torch.stack(losses))))
 
     return model
 
